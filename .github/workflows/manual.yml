@@ -62,5 +62,7 @@ jobs:
     - name: Terraform Destroy
       if: |
         ${{ (inputs.terraform_destroy == true && github.ref == 'main') }}
+      env:
+       ACTIONS_RUNNER_DEBUG: true
       run: |
         echo "test"
