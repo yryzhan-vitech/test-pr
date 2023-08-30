@@ -62,7 +62,7 @@ jobs:
 
     - name: Terraform Destroy
       if: |
-        ${{ (inputs.terraform_destroy == true && github.ref == 'refs/heads/main') }}
+        inputs.terraform_destroy == true && github.ref == 'refs/heads/main'
       env:
        ACTIONS_RUNNER_DEBUG: true
       run: |
