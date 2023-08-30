@@ -58,6 +58,6 @@ jobs:
         echo "test"
 
     - name: Terraform Destroy
-      if: (github.ref == 'main' && inputs.terraform_destroy == true)
+      if: ${{ github.ref == 'main' }} && ${{ inputs.terraform_destroy == true }}
       run: |
         echo "test"
